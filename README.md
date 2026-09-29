@@ -7,7 +7,9 @@
 
 ## 在线浏览 / 下载
 
-👉 **https://gguioo.github.io/sadone/**（分类浏览 · 点击任意贴纸直接下载 PNG）
+👉 [SadOne Journal · 手账博客](https://gguioo.github.io/sadone/)
+
+👉 [贴纸画廊 · 234 枚全览，点击下载 PNG](https://gguioo.github.io/sadone/gallery.html)
 
 ## 分类与数量
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>贴纸 · SadOne Journal</title>
+<style>
+@font-face{font-family:Caveat;src:url(fonts/caveat-500.woff2) format('woff2');font-weight:400;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;padding:28px 14px 60px;background:#faf7f2;
+background-image:radial-gradient(#e7e2d6 1px,transparent 1px);background-size:24px 24px;
+font-family:Caveat,'Segoe Print','Bradley Hand','楷体','Kaiti SC',cursive;color:#3b3a37;text-align:center}
+.top a{color:#a5a199;text-decoration:none;font-size:16px}
+h1{font-size:30px;font-weight:700;margin:10px 0 0}
+.sub{color:#a5a199;font-size:16px;margin:0 0 30px}
+section{max-width:640px;margin:0 auto 34px}
+.sec-h{font-size:19px;color:#8a8880;margin:0 0 12px}
+.sec-h b{color:#3b3a37}
+.grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.grid a{display:block;background:#fff;border-radius:8px;padding:8px;
+box-shadow:0 1px 3px rgba(59,58,55,.14);transition:transform .18s}
+.grid a:hover{transform:scale(1.07) rotate(-1deg)}
+.grid img{display:block;width:96px;height:96px;object-fit:contain}
+footer{margin-top:44px;font-size:15px;color:#a5a199}
+footer a{color:#a5a199}
+</style>
+</head>
+<body>
+<div class="top"><a href="index.html">← Journal</a></div>
+<h1>贴纸 · 全部 234 枚</h1>
+<p class="sub">点击任意一枚可以直接下载原图</p>
+<div id="main"></div>
+<footer>SadOne · <a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener">gguioo</a></footer>
+
+<script src="manifest-data.js"></script>
+<script>
+const CN = {ribbon:'丝带标题', note:'便签卡', frame:'边框底板', bubble:'对话气泡', tag:'标签贴纸',
+  tape:'和纸胶带', stamp:'邮票邮戳', label:'吊牌书签', wreath:'花环角饰', divider:'分隔线',
+  planner:'日期计划', symbol:'符号箭头', doodle:'涂鸦小图', icon:'生活图标'};
+const BY = {};
+window.SADONE_MF.forEach(d => (BY[d.cat] = BY[d.cat] || []).push(d));
+const main = document.getElementById('main');
+Object.keys(BY).forEach(cat => {
+  const sec = document.createElement('section');
+  sec.innerHTML = '<div class="sec-h"><b>' + (CN[cat] || cat) + '</b> · ' + BY[cat].length + ' 枚</div>';
+  const g = document.createElement('div'); g.className = 'grid';
+  BY[cat].forEach(d => {
+    const a = document.createElement('a'); a.href = 'stickers/' + d.file; a.download = d.file.split('/').pop();
+    a.innerHTML = '<img loading="lazy" src="stickers/' + d.file + '" alt="">';
+    g.appendChild(a);
+  });
+  sec.appendChild(g); main.appendChild(sec);
+});
+</script>
+</body>
+</html>
