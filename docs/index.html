@@ -1,186 +1,48 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SadOne · 手账风组件库</title>
-<link rel="stylesheet" href="./sadone.css">
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SadOne Stickers · 手账贴纸库</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: #faf7f2;
-    background-image: radial-gradient(#e5e0d5 1px, transparent 1px);
-    background-size: 22px 22px;
-    font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', '楷体', cursive;
-    color: #3b3a37; padding: 40px 20px 80px;
-  }
-  [v-cloak] { display: none; }
-  .page { max-width: 900px; margin: 0 auto; }
-  .hero { text-align: center; margin-bottom: 20px; }
-  .hero h1 { font-size: 46px; margin: 14px 0 4px; }
-  .hero p { font-size: 19px; color: #8a8880; margin: 4px 0; }
-  section { margin-top: 54px; }
-  .sec-head { display: flex; justify-content: center; margin-bottom: 26px; }
-  .grid { display: flex; flex-wrap: wrap; gap: 26px; justify-content: center; align-items: flex-start; }
-  .cell { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .cell > code { font-family: Consolas, monospace; font-size: 12.5px; color: #8a8880; background: #fff; padding: 3px 10px; border-radius: 8px; border: 1px dashed #c9c4b8; }
-  .stage { background: #fffdf8; border: 1.6px solid #3b3a37; border-radius: 14px; padding: 26px 30px; display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; align-items: center; box-shadow: 3px 4px 0 rgba(59,58,55,.12); }
-  .stage.col { flex-direction: column; align-items: stretch; }
-  footer { text-align: center; margin-top: 70px; color: #8a8880; font-size: 17px; }
-  footer a { color: #e88b7d; }
-</style>
-</head>
-<body>
-<div id="app" v-cloak>
-  <div class="page">
-    <div class="hero">
-      <s-ribbon text="SadOne" variant="bow"></s-ribbon>
-      <h1>SadOne · 手账风组件库</h1>
-      <p>ribbons · memos · tapes &amp; doodles — pure SVG, pure hand-drawn</p>
-      <p>Vue 3 · 21 components · ~110 doodle icons · 0 dependencies</p>
-    </div>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="丝带标题 Ribbon" variant="wing"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-ribbon text="To Do"></s-ribbon><code>&lt;s-ribbon text="To Do"/&gt;</code></div>
-        <div class="cell"><s-ribbon text="Idea 💡" variant="plain"></s-ribbon><code>variant="plain"</code></div>
-        <div class="cell"><s-ribbon text="Today" variant="curve"></s-ribbon><code>variant="curve"</code></div>
-        <div class="cell"><s-ribbon text="Check List" variant="bow"></s-ribbon><code>variant="bow"</code></div>
-        <div class="cell"><s-ribbon text="Good Day ♥" variant="wide"></s-ribbon><code>variant="wide"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="便签卡 Note Cards" variant="plain"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-note title="To Do List" variant="todo"><ul><li>写组件库</li><li>推 GitHub</li><li>喝咖啡</li></ul></s-note><code>&lt;s-note variant="todo"&gt;</code></div>
-        <div class="cell"><s-note title="Memo" variant="memo"><ul><li>备忘一</li><li>备忘二</li></ul></s-note><code>variant="memo"</code></div>
-        <div class="cell"><s-note title="Shopping" variant="shopping"><ul><li>草莓</li><li>胶带</li></ul></s-note><code>variant="shopping"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="题头框卡 Boards" variant="curve"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-board preset="ideas"><p>写一个组件库<br>叫 sadone</p></s-board><code>preset="ideas"</code></div>
-        <div class="cell"><s-board preset="goals" :rows="2"><p>本周目标：<br>全部绿灯</p></s-board><code>preset="goals"</code></div>
-        <div class="cell"><s-board preset="work" :rows="2"><p>部署 sadone<br>到生产</p></s-board><code>preset="work"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="气泡 Bubbles" variant="plain"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-bubble variant="cloud">今天也要加油鸭！</s-bubble><code>variant="cloud"</code></div>
-        <div class="cell"><s-bubble variant="think">想什么呢…</s-bubble><code>variant="think"</code></div>
-        <div class="cell"><s-bubble variant="heart">♥</s-bubble><code>variant="heart"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="标签与胶带 Tags &amp; Tapes" variant="wing"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-tag variant="point"></s-tag><code>variant="point"</code></div>
-        <div class="cell"><s-tag variant="tips"></s-tag><code>variant="tips"</code></div>
-        <div class="cell"><s-tag variant="important"></s-tag><code>variant="important"</code></div>
-        <div class="cell"><s-tag variant="done"></s-tag><code>variant="done"</code></div>
-        <div class="cell"><s-tag variant="okay"></s-tag><code>variant="okay"</code></div>
-        <div class="cell"><s-tag variant="nice"></s-tag><code>variant="nice"</code></div>
-      </div>
-      <div class="grid" style="margin-top: 22px;">
-        <div class="cell"><s-washi pattern="flower"></s-washi><code>pattern="flower"</code></div>
-        <div class="cell"><s-washi pattern="dot"></s-washi><code>pattern="dot"</code></div>
-        <div class="cell"><s-washi pattern="grid"></s-washi><code>pattern="grid"</code></div>
-        <div class="cell"><s-washi pattern="heart"></s-washi><code>pattern="heart"</code></div>
-        <div class="cell"><s-washi pattern="bow"></s-washi><code>pattern="bow"</code></div>
-        <div class="cell"><s-washi pattern="stripe"></s-washi><code>pattern="stripe"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="待办与打卡 Todos &amp; Trackers" variant="plain"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell">
-          <s-todolist :items="['拉取素材', '写组件', '部署上线']" title="To Do List"></s-todolist>
-          <code>&lt;s-todolist :items&gt;（可点）</code>
-        </div>
-        <div class="cell"><s-habit variant="habit"></s-habit><code>variant="habit"</code></div>
-        <div class="cell"><s-habit variant="weekly"></s-habit><code>variant="weekly"</code></div>
-        <div class="cell"><s-habit variant="mood"></s-habit><code>variant="mood"</code></div>
-        <div class="cell"><s-weekbar :active="[0,1,4]"></s-weekbar><code>&lt;s-weekbar :active&gt;</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="月历 Calendar" variant="curve"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-calendar :year="2026" :month="9" :marks="{14:'heart',20:'star',29:'dot'}"></s-calendar><code>&lt;s-calendar :marks&gt;</code></div>
-        <div class="cell"><s-date-chip variant="date"></s-date-chip><code>variant="date"</code></div>
-        <div class="cell"><s-date-chip variant="countdown" :dday="7"></s-date-chip><code>variant="countdown"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="装饰 Ornaments" variant="wing"></s-ribbon></div>
-      <div class="stage col">
-        <s-divider variant="vine" :width="420"></s-divider>
-        <s-divider variant="heart-line" :width="420"></s-divider>
-        <s-divider variant="bow-line" :width="420"></s-divider>
-        <s-divider variant="diamond-wave" :width="420"></s-divider>
-        <s-divider variant="loop" :width="420"></s-divider>
-      </div>
-      <div class="grid" style="margin-top: 22px;">
-        <div class="cell"><s-arrow variant="straight"></s-arrow><code>SArrow straight</code></div>
-        <div class="cell"><s-arrow variant="curve"></s-arrow><code>variant="curve"</code></div>
-        <div class="cell"><s-arrow variant="wavy"></s-arrow><code>variant="wavy"</code></div>
-        <div class="cell"><s-arrow variant="hook"></s-arrow><code>variant="hook"</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="花环 · 邮票 · 拍立得" variant="plain"></s-ribbon></div>
-      <div class="grid">
-        <div class="cell"><s-wreath variant="round" :size="150"><span>For You</span></s-wreath><code>&lt;s-wreath&gt;</code></div>
-        <div class="cell"><s-stamp icon="cat"></s-stamp><code>&lt;s-stamp icon="cat"&gt;</code></div>
-        <div class="cell"><s-stamp icon="cherry"></s-stamp><code>icon="cherry"</code></div>
-        <div class="cell"><s-stamp icon="tulip"></s-stamp><code>icon="tulip"</code></div>
-        <div class="cell"><s-polaroid caption="桂林 · 塔山" tape="heart"><div style="font-size:40px">🌇</div></s-polaroid><code>&lt;s-polaroid&gt;</code></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><s-ribbon text="涂鸦图标 Doodles" variant="wide"></s-ribbon></div>
-      <div class="stage">
-        <s-doodle v-for="n in iconList" :key="n" :name="n" :size="30"></s-doodle>
-      </div>
-      <p style="text-align:center;color:#8a8880">以上仅为节选 · 全部 <b>{{ iconCount }}</b> 枚见 <code>src/icons-*.ts</code></p>
-    </section>
-
-    <footer>
-      made with ♥ by Jimmy · <a href="https://github.com/gguioo/sadone">github.com/gguioo/sadone</a>
-    </footer>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script>
-<script src="./sadone.umd.cjs"></script>
+*{box-sizing:border-box}body{margin:0;padding:34px 16px 70px;background:#faf7f2;
+background-image:radial-gradient(#e5e0d5 1px,transparent 1px);background-size:22px 22px;
+font-family:'Caveat','Segoe Print','Bradley Hand','楷体',cursive;color:#3b3a37;text-align:center}
+h1{font-size:42px;margin:6px 0 2px}.sub{color:#8a8880;font-size:18px;margin:0 0 26px}
+nav{position:sticky;top:0;background:#faf7f2ee;padding:8px 0;z-index:9}
+nav a{display:inline-block;margin:3px 4px;padding:3px 12px;border:1.6px solid #3b3a37;border-radius:20px;
+text-decoration:none;color:#3b3a37;font-size:16px;background:#fffdf8}
+nav a:hover{background:#e88b7d;color:#fff;border-color:#e88b7d}
+section{margin-top:40px}h2{font-size:28px;display:inline-block;border-bottom:3px solid #e88b7d;padding:0 10px}
+.cnt{color:#8a8880;font-size:17px;margin-left:6px}
+.grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px}
+.card{display:flex;flex-direction:column;align-items:center;width:112px;text-decoration:none;color:#3b3a37}
+.ph{width:104px;height:104px;display:flex;align-items:center;justify-content:center;border-radius:10px;
+background:repeating-conic-gradient(#f0ece2 0 25%,#fffdf8 0 50%) 0 0/16px 16px;border:1.4px solid #d8d3c6;overflow:hidden}
+.ph:hover{border-color:#e88b7d}
+.card img{max-width:92px;max-height:92px}
+.nm{font-size:12px;color:#8a8880;margin-top:4px;line-height:1.3}
+footer{margin-top:60px;color:#8a8880;font-size:15px}
+</style></head><body>
+<h1>SadOne Stickers</h1>
+<p class="sub">240 枚手账贴纸 · 全部原图抠切 · 透明底 PNG · 点击任意贴纸即可下载</p>
+<nav id="nav"></nav><div id="main"></div>
+<footer>SadOne Stickers · cut from Jimmy's doodle sheets · <a href="https://github.com/gguioo/sadone">GitHub</a></footer>
+<script>const DATA = [{"f": "ribbon/ribbon_001.png", "c": "ribbon", "cn": "丝带标题", "w": 181, "h": 82}, {"f": "ribbon/ribbon_002.png", "c": "ribbon", "cn": "丝带标题", "w": 212, "h": 84}, {"f": "ribbon/ribbon_003.png", "c": "ribbon", "cn": "丝带标题", "w": 206, "h": 82}, {"f": "ribbon/ribbon_004.png", "c": "ribbon", "cn": "丝带标题", "w": 178, "h": 71}, {"f": "ribbon/ribbon_005.png", "c": "ribbon", "cn": "丝带标题", "w": 173, "h": 59}, {"f": "ribbon/ribbon_006.png", "c": "ribbon", "cn": "丝带标题", "w": 174, "h": 76}, {"f": "ribbon/ribbon_007.png", "c": "ribbon", "cn": "丝带标题", "w": 198, "h": 74}, {"f": "ribbon/ribbon_008.png", "c": "ribbon", "cn": "丝带标题", "w": 196, "h": 75}, {"f": "ribbon/ribbon_009.png", "c": "ribbon", "cn": "丝带标题", "w": 195, "h": 82}, {"f": "ribbon/ribbon_010.png", "c": "ribbon", "cn": "丝带标题", "w": 192, "h": 83}, {"f": "frame/frame_001.png", "c": "frame", "cn": "边框底板", "w": 137, "h": 103}, {"f": "frame/frame_002.png", "c": "frame", "cn": "边框底板", "w": 158, "h": 96}, {"f": "frame/frame_003.png", "c": "frame", "cn": "边框底板", "w": 161, "h": 86}, {"f": "frame/frame_004.png", "c": "frame", "cn": "边框底板", "w": 147, "h": 90}, {"f": "frame/frame_005.png", "c": "frame", "cn": "边框底板", "w": 159, "h": 90}, {"f": "frame/frame_006.png", "c": "frame", "cn": "边框底板", "w": 184, "h": 93}, {"f": "note/note_001.png", "c": "note", "cn": "便签卡", "w": 156, "h": 170}, {"f": "note/note_002.png", "c": "note", "cn": "便签卡", "w": 155, "h": 169}, {"f": "note/note_003.png", "c": "note", "cn": "便签卡", "w": 171, "h": 183}, {"f": "note/note_004.png", "c": "note", "cn": "便签卡", "w": 154, "h": 171}, {"f": "note/note_005.png", "c": "note", "cn": "便签卡", "w": 161, "h": 162}, {"f": "note/note_006.png", "c": "note", "cn": "便签卡", "w": 152, "h": 165}, {"f": "bubble/bubble_001.png", "c": "bubble", "cn": "对话气泡", "w": 147, "h": 100}, {"f": "bubble/bubble_002.png", "c": "bubble", "cn": "对话气泡", "w": 112, "h": 92}, {"f": "bubble/bubble_003.png", "c": "bubble", "cn": "对话气泡", "w": 123, "h": 92}, {"f": "bubble/bubble_004.png", "c": "bubble", "cn": "对话气泡", "w": 202, "h": 97}, {"f": "bubble/bubble_005.png", "c": "bubble", "cn": "对话气泡", "w": 136, "h": 85}, {"f": "bubble/bubble_006.png", "c": "bubble", "cn": "对话气泡", "w": 96, "h": 88}, {"f": "tag/tag_001.png", "c": "tag", "cn": "标签贴纸", "w": 118, "h": 66}, {"f": "tag/tag_002.png", "c": "tag", "cn": "标签贴纸", "w": 142, "h": 64}, {"f": "tag/tag_003.png", "c": "tag", "cn": "标签贴纸", "w": 120, "h": 65}, {"f": "tag/tag_004.png", "c": "tag", "cn": "标签贴纸", "w": 158, "h": 63}, {"f": "tag/tag_005.png", "c": "tag", "cn": "标签贴纸", "w": 148, "h": 63}, {"f": "tag/tag_006.png", "c": "tag", "cn": "标签贴纸", "w": 128, "h": 64}, {"f": "tag/tag_007.png", "c": "tag", "cn": "标签贴纸", "w": 123, "h": 65}, {"f": "symbol/symbol_001.png", "c": "symbol", "cn": "符号箭头", "w": 49, "h": 48}, {"f": "symbol/symbol_002.png", "c": "symbol", "cn": "符号箭头", "w": 44, "h": 44}, {"f": "symbol/symbol_003.png", "c": "symbol", "cn": "符号箭头", "w": 43, "h": 43}, {"f": "symbol/symbol_004.png", "c": "symbol", "cn": "符号箭头", "w": 179, "h": 34}, {"f": "symbol/symbol_005.png", "c": "symbol", "cn": "符号箭头", "w": 60, "h": 37}, {"f": "symbol/symbol_006.png", "c": "symbol", "cn": "符号箭头", "w": 36, "h": 38}, {"f": "symbol/symbol_007.png", "c": "symbol", "cn": "符号箭头", "w": 97, "h": 36}, {"f": "symbol/symbol_008.png", "c": "symbol", "cn": "符号箭头", "w": 38, "h": 37}, {"f": "symbol/symbol_009.png", "c": "symbol", "cn": "符号箭头", "w": 32, "h": 32}, {"f": "symbol/symbol_010.png", "c": "symbol", "cn": "符号箭头", "w": 91, "h": 31}, {"f": "doodle/doodle_001.png", "c": "doodle", "cn": "涂鸦小图", "w": 47, "h": 49}, {"f": "doodle/doodle_002.png", "c": "doodle", "cn": "涂鸦小图", "w": 41, "h": 48}, {"f": "doodle/doodle_003.png", "c": "doodle", "cn": "涂鸦小图", "w": 43, "h": 43}, {"f": "doodle/doodle_004.png", "c": "doodle", "cn": "涂鸦小图", "w": 41, "h": 43}, {"f": "doodle/doodle_005.png", "c": "doodle", "cn": "涂鸦小图", "w": 41, "h": 47}, {"f": "doodle/doodle_006.png", "c": "doodle", "cn": "涂鸦小图", "w": 117, "h": 83}, {"f": "doodle/doodle_007.png", "c": "doodle", "cn": "涂鸦小图", "w": 159, "h": 84}, {"f": "doodle/doodle_008.png", "c": "doodle", "cn": "涂鸦小图", "w": 46, "h": 78}, {"f": "doodle/doodle_009.png", "c": "doodle", "cn": "涂鸦小图", "w": 46, "h": 46}, {"f": "doodle/doodle_010.png", "c": "doodle", "cn": "涂鸦小图", "w": 32, "h": 35}, {"f": "doodle/doodle_011.png", "c": "doodle", "cn": "涂鸦小图", "w": 31, "h": 33}, {"f": "doodle/doodle_012.png", "c": "doodle", "cn": "涂鸦小图", "w": 110, "h": 93}, {"f": "doodle/doodle_013.png", "c": "doodle", "cn": "涂鸦小图", "w": 37, "h": 56}, {"f": "doodle/doodle_014.png", "c": "doodle", "cn": "涂鸦小图", "w": 39, "h": 51}, {"f": "doodle/doodle_015.png", "c": "doodle", "cn": "涂鸦小图", "w": 34, "h": 38}, {"f": "doodle/doodle_016.png", "c": "doodle", "cn": "涂鸦小图", "w": 36, "h": 38}, {"f": "doodle/doodle_017.png", "c": "doodle", "cn": "涂鸦小图", "w": 33, "h": 33}, {"f": "doodle/doodle_018.png", "c": "doodle", "cn": "涂鸦小图", "w": 41, "h": 22}, {"f": "divider/divider_001.png", "c": "divider", "cn": "分隔线", "w": 28, "h": 33}, {"f": "divider/divider_002.png", "c": "divider", "cn": "分隔线", "w": 228, "h": 31}, {"f": "divider/divider_003.png", "c": "divider", "cn": "分隔线", "w": 27, "h": 31}, {"f": "divider/divider_004.png", "c": "divider", "cn": "分隔线", "w": 111, "h": 35}, {"f": "divider/divider_005.png", "c": "divider", "cn": "分隔线", "w": 160, "h": 30}, {"f": "divider/divider_006.png", "c": "divider", "cn": "分隔线", "w": 160, "h": 20}, {"f": "divider/divider_007.png", "c": "divider", "cn": "分隔线", "w": 181, "h": 33}, {"f": "divider/divider_008.png", "c": "divider", "cn": "分隔线", "w": 249, "h": 27}, {"f": "divider/divider_009.png", "c": "divider", "cn": "分隔线", "w": 182, "h": 28}, {"f": "divider/divider_010.png", "c": "divider", "cn": "分隔线", "w": 183, "h": 23}, {"f": "divider/divider_011.png", "c": "divider", "cn": "分隔线", "w": 180, "h": 22}, {"f": "wreath/wreath_001.png", "c": "wreath", "cn": "花环角饰", "w": 124, "h": 122}, {"f": "wreath/wreath_002.png", "c": "wreath", "cn": "花环角饰", "w": 134, "h": 102}, {"f": "wreath/wreath_003.png", "c": "wreath", "cn": "花环角饰", "w": 113, "h": 111}, {"f": "wreath/wreath_004.png", "c": "wreath", "cn": "花环角饰", "w": 92, "h": 119}, {"f": "wreath/wreath_005.png", "c": "wreath", "cn": "花环角饰", "w": 65, "h": 105}, {"f": "wreath/wreath_006.png", "c": "wreath", "cn": "花环角饰", "w": 156, "h": 99}, {"f": "wreath/wreath_007.png", "c": "wreath", "cn": "花环角饰", "w": 117, "h": 90}, {"f": "wreath/wreath_008.png", "c": "wreath", "cn": "花环角饰", "w": 131, "h": 104}, {"f": "label/label_001.png", "c": "label", "cn": "吊牌书签", "w": 67, "h": 109}, {"f": "label/label_002.png", "c": "label", "cn": "吊牌书签", "w": 284, "h": 104}, {"f": "label/label_003.png", "c": "label", "cn": "吊牌书签", "w": 78, "h": 97}, {"f": "label/label_004.png", "c": "label", "cn": "吊牌书签", "w": 132, "h": 91}, {"f": "label/label_005.png", "c": "label", "cn": "吊牌书签", "w": 121, "h": 87}, {"f": "label/label_006.png", "c": "label", "cn": "吊牌书签", "w": 67, "h": 85}, {"f": "label/label_007.png", "c": "label", "cn": "吊牌书签", "w": 66, "h": 91}, {"f": "label/label_008.png", "c": "label", "cn": "吊牌书签", "w": 99, "h": 74}, {"f": "tape/tape_001.png", "c": "tape", "cn": "和纸胶带", "w": 241, "h": 66}, {"f": "tape/tape_002.png", "c": "tape", "cn": "和纸胶带", "w": 116, "h": 66}, {"f": "tape/tape_003.png", "c": "tape", "cn": "和纸胶带", "w": 115, "h": 62}, {"f": "tape/tape_004.png", "c": "tape", "cn": "和纸胶带", "w": 129, "h": 58}, {"f": "tape/tape_005.png", "c": "tape", "cn": "和纸胶带", "w": 112, "h": 59}, {"f": "tape/tape_006.png", "c": "tape", "cn": "和纸胶带", "w": 115, "h": 53}, {"f": "tape/tape_007.png", "c": "tape", "cn": "和纸胶带", "w": 106, "h": 48}, {"f": "stamp/stamp_001.png", "c": "stamp", "cn": "邮票邮戳", "w": 272, "h": 103}, {"f": "stamp/stamp_002.png", "c": "stamp", "cn": "邮票邮戳", "w": 81, "h": 94}, {"f": "stamp/stamp_003.png", "c": "stamp", "cn": "邮票邮戳", "w": 80, "h": 95}, {"f": "stamp/stamp_004.png", "c": "stamp", "cn": "邮票邮戳", "w": 80, "h": 95}, {"f": "stamp/stamp_005.png", "c": "stamp", "cn": "邮票邮戳", "w": 78, "h": 93}, {"f": "stamp/stamp_006.png", "c": "stamp", "cn": "邮票邮戳", "w": 79, "h": 93}, {"f": "stamp/stamp_007.png", "c": "stamp", "cn": "邮票邮戳", "w": 163, "h": 97}, {"f": "stamp/stamp_008.png", "c": "stamp", "cn": "邮票邮戳", "w": 79, "h": 39}, {"f": "stamp/stamp_009.png", "c": "stamp", "cn": "邮票邮戳", "w": 79, "h": 39}, {"f": "planner/planner_001.png", "c": "planner", "cn": "日期计划", "w": 163, "h": 77}, {"f": "planner/planner_002.png", "c": "planner", "cn": "日期计划", "w": 161, "h": 51}, {"f": "planner/planner_003.png", "c": "planner", "cn": "日期计划", "w": 255, "h": 48}, {"f": "planner/planner_004.png", "c": "planner", "cn": "日期计划", "w": 102, "h": 48}, {"f": "planner/planner_005.png", "c": "planner", "cn": "日期计划", "w": 144, "h": 47}, {"f": "planner/planner_006.png", "c": "planner", "cn": "日期计划", "w": 114, "h": 47}, {"f": "icon/icon_001.png", "c": "icon", "cn": "生活图标", "w": 125, "h": 69}, {"f": "icon/icon_002.png", "c": "icon", "cn": "生活图标", "w": 57, "h": 68}, {"f": "icon/icon_003.png", "c": "icon", "cn": "生活图标", "w": 117, "h": 61}, {"f": "icon/icon_004.png", "c": "icon", "cn": "生活图标", "w": 105, "h": 61}, {"f": "icon/icon_005.png", "c": "icon", "cn": "生活图标", "w": 51, "h": 62}, {"f": "icon/icon_006.png", "c": "icon", "cn": "生活图标", "w": 55, "h": 61}, {"f": "icon/icon_007.png", "c": "icon", "cn": "生活图标", "w": 52, "h": 62}, {"f": "icon/icon_008.png", "c": "icon", "cn": "生活图标", "w": 56, "h": 63}, {"f": "icon/icon_009.png", "c": "icon", "cn": "生活图标", "w": 70, "h": 56}, {"f": "icon/icon_010.png", "c": "icon", "cn": "生活图标", "w": 50, "h": 60}, {"f": "icon/icon_011.png", "c": "icon", "cn": "生活图标", "w": 61, "h": 52}, {"f": "icon/icon_012.png", "c": "icon", "cn": "生活图标", "w": 62, "h": 51}, {"f": "icon/icon_013.png", "c": "icon", "cn": "生活图标", "w": 119, "h": 59}, {"f": "icon/icon_014.png", "c": "icon", "cn": "生活图标", "w": 50, "h": 54}, {"f": "icon/icon_015.png", "c": "icon", "cn": "生活图标", "w": 53, "h": 51}, {"f": "icon/icon_016.png", "c": "icon", "cn": "生活图标", "w": 46, "h": 49}, {"f": "icon/icon_017.png", "c": "icon", "cn": "生活图标", "w": 203, "h": 58}, {"f": "icon/icon_018.png", "c": "icon", "cn": "生活图标", "w": 98, "h": 50}, {"f": "icon/icon_019.png", "c": "icon", "cn": "生活图标", "w": 52, "h": 41}, {"f": "icon/icon_020.png", "c": "icon", "cn": "生活图标", "w": 58, "h": 45}, {"f": "icon/icon_021.png", "c": "icon", "cn": "生活图标", "w": 42, "h": 45}, {"f": "icon/icon_022.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 45}, {"f": "icon/icon_023.png", "c": "icon", "cn": "生活图标", "w": 51, "h": 48}, {"f": "ribbon/ribbon_011.png", "c": "ribbon", "cn": "丝带标题", "w": 192, "h": 83}, {"f": "ribbon/ribbon_012.png", "c": "ribbon", "cn": "丝带标题", "w": 180, "h": 82}, {"f": "ribbon/ribbon_013.png", "c": "ribbon", "cn": "丝带标题", "w": 167, "h": 82}, {"f": "ribbon/ribbon_014.png", "c": "ribbon", "cn": "丝带标题", "w": 214, "h": 82}, {"f": "ribbon/ribbon_015.png", "c": "ribbon", "cn": "丝带标题", "w": 175, "h": 76}, {"f": "ribbon/ribbon_016.png", "c": "ribbon", "cn": "丝带标题", "w": 204, "h": 84}, {"f": "ribbon/ribbon_017.png", "c": "ribbon", "cn": "丝带标题", "w": 179, "h": 80}, {"f": "ribbon/ribbon_018.png", "c": "ribbon", "cn": "丝带标题", "w": 191, "h": 80}, {"f": "ribbon/ribbon_019.png", "c": "ribbon", "cn": "丝带标题", "w": 173, "h": 69}, {"f": "ribbon/ribbon_020.png", "c": "ribbon", "cn": "丝带标题", "w": 185, "h": 78}, {"f": "ribbon/ribbon_021.png", "c": "ribbon", "cn": "丝带标题", "w": 190, "h": 83}, {"f": "ribbon/ribbon_022.png", "c": "ribbon", "cn": "丝带标题", "w": 179, "h": 78}, {"f": "ribbon/ribbon_023.png", "c": "ribbon", "cn": "丝带标题", "w": 183, "h": 79}, {"f": "ribbon/ribbon_024.png", "c": "ribbon", "cn": "丝带标题", "w": 193, "h": 78}, {"f": "ribbon/ribbon_025.png", "c": "ribbon", "cn": "丝带标题", "w": 194, "h": 76}, {"f": "ribbon/ribbon_026.png", "c": "ribbon", "cn": "丝带标题", "w": 181, "h": 79}, {"f": "ribbon/ribbon_027.png", "c": "ribbon", "cn": "丝带标题", "w": 203, "h": 76}, {"f": "ribbon/ribbon_028.png", "c": "ribbon", "cn": "丝带标题", "w": 214, "h": 75}, {"f": "ribbon/ribbon_029.png", "c": "ribbon", "cn": "丝带标题", "w": 202, "h": 79}, {"f": "ribbon/ribbon_030.png", "c": "ribbon", "cn": "丝带标题", "w": 161, "h": 69}, {"f": "label/label_009.png", "c": "label", "cn": "吊牌书签", "w": 63, "h": 83}, {"f": "label/label_010.png", "c": "label", "cn": "吊牌书签", "w": 63, "h": 80}, {"f": "label/label_011.png", "c": "label", "cn": "吊牌书签", "w": 97, "h": 82}, {"f": "label/label_012.png", "c": "label", "cn": "吊牌书签", "w": 109, "h": 78}, {"f": "label/label_013.png", "c": "label", "cn": "吊牌书签", "w": 52, "h": 75}, {"f": "label/label_014.png", "c": "label", "cn": "吊牌书签", "w": 52, "h": 68}, {"f": "label/label_015.png", "c": "label", "cn": "吊牌书签", "w": 53, "h": 75}, {"f": "label/label_016.png", "c": "label", "cn": "吊牌书签", "w": 54, "h": 70}, {"f": "label/label_017.png", "c": "label", "cn": "吊牌书签", "w": 53, "h": 71}, {"f": "label/label_018.png", "c": "label", "cn": "吊牌书签", "w": 54, "h": 72}, {"f": "label/label_019.png", "c": "label", "cn": "吊牌书签", "w": 75, "h": 72}, {"f": "label/label_020.png", "c": "label", "cn": "吊牌书签", "w": 80, "h": 67}, {"f": "label/label_021.png", "c": "label", "cn": "吊牌书签", "w": 119, "h": 150}, {"f": "label/label_022.png", "c": "label", "cn": "吊牌书签", "w": 207, "h": 148}, {"f": "label/label_023.png", "c": "label", "cn": "吊牌书签", "w": 227, "h": 152}, {"f": "label/label_024.png", "c": "label", "cn": "吊牌书签", "w": 123, "h": 146}, {"f": "label/label_025.png", "c": "label", "cn": "吊牌书签", "w": 285, "h": 146}, {"f": "frame/frame_007.png", "c": "frame", "cn": "边框底板", "w": 206, "h": 123}, {"f": "frame/frame_008.png", "c": "frame", "cn": "边框底板", "w": 140, "h": 123}, {"f": "frame/frame_009.png", "c": "frame", "cn": "边框底板", "w": 311, "h": 122}, {"f": "frame/frame_010.png", "c": "frame", "cn": "边框底板", "w": 155, "h": 120}, {"f": "frame/frame_011.png", "c": "frame", "cn": "边框底板", "w": 133, "h": 120}, {"f": "doodle/doodle_019.png", "c": "doodle", "cn": "涂鸦小图", "w": 40, "h": 45}, {"f": "doodle/doodle_020.png", "c": "doodle", "cn": "涂鸦小图", "w": 29, "h": 39}, {"f": "doodle/doodle_021.png", "c": "doodle", "cn": "涂鸦小图", "w": 71, "h": 38}, {"f": "doodle/doodle_022.png", "c": "doodle", "cn": "涂鸦小图", "w": 40, "h": 43}, {"f": "doodle/doodle_023.png", "c": "doodle", "cn": "涂鸦小图", "w": 37, "h": 41}, {"f": "doodle/doodle_024.png", "c": "doodle", "cn": "涂鸦小图", "w": 261, "h": 36}, {"f": "doodle/doodle_025.png", "c": "doodle", "cn": "涂鸦小图", "w": 36, "h": 38}, {"f": "doodle/doodle_026.png", "c": "doodle", "cn": "涂鸦小图", "w": 88, "h": 31}, {"f": "doodle/doodle_027.png", "c": "doodle", "cn": "涂鸦小图", "w": 193, "h": 33}, {"f": "doodle/doodle_028.png", "c": "doodle", "cn": "涂鸦小图", "w": 39, "h": 36}, {"f": "divider/divider_012.png", "c": "divider", "cn": "分隔线", "w": 114, "h": 52}, {"f": "divider/divider_013.png", "c": "divider", "cn": "分隔线", "w": 137, "h": 51}, {"f": "divider/divider_014.png", "c": "divider", "cn": "分隔线", "w": 50, "h": 49}, {"f": "divider/divider_015.png", "c": "divider", "cn": "分隔线", "w": 198, "h": 44}, {"f": "divider/divider_016.png", "c": "divider", "cn": "分隔线", "w": 227, "h": 47}, {"f": "icon/icon_024.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 47}, {"f": "icon/icon_025.png", "c": "icon", "cn": "生活图标", "w": 48, "h": 48}, {"f": "icon/icon_026.png", "c": "icon", "cn": "生活图标", "w": 52, "h": 38}, {"f": "icon/icon_027.png", "c": "icon", "cn": "生活图标", "w": 83, "h": 48}, {"f": "icon/icon_028.png", "c": "icon", "cn": "生活图标", "w": 57, "h": 47}, {"f": "icon/icon_029.png", "c": "icon", "cn": "生活图标", "w": 49, "h": 40}, {"f": "icon/icon_030.png", "c": "icon", "cn": "生活图标", "w": 48, "h": 35}, {"f": "icon/icon_031.png", "c": "icon", "cn": "生活图标", "w": 146, "h": 57}, {"f": "icon/icon_032.png", "c": "icon", "cn": "生活图标", "w": 104, "h": 59}, {"f": "icon/icon_033.png", "c": "icon", "cn": "生活图标", "w": 33, "h": 53}, {"f": "icon/icon_034.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 50}, {"f": "icon/icon_035.png", "c": "icon", "cn": "生活图标", "w": 38, "h": 52}, {"f": "icon/icon_036.png", "c": "icon", "cn": "生活图标", "w": 109, "h": 53}, {"f": "icon/icon_037.png", "c": "icon", "cn": "生活图标", "w": 51, "h": 46}, {"f": "icon/icon_038.png", "c": "icon", "cn": "生活图标", "w": 45, "h": 45}, {"f": "icon/icon_039.png", "c": "icon", "cn": "生活图标", "w": 36, "h": 47}, {"f": "icon/icon_040.png", "c": "icon", "cn": "生活图标", "w": 40, "h": 47}, {"f": "icon/icon_041.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 45}, {"f": "icon/icon_042.png", "c": "icon", "cn": "生活图标", "w": 36, "h": 47}, {"f": "icon/icon_043.png", "c": "icon", "cn": "生活图标", "w": 55, "h": 50}, {"f": "icon/icon_044.png", "c": "icon", "cn": "生活图标", "w": 227, "h": 58}, {"f": "icon/icon_045.png", "c": "icon", "cn": "生活图标", "w": 160, "h": 53}, {"f": "icon/icon_046.png", "c": "icon", "cn": "生活图标", "w": 144, "h": 56}, {"f": "icon/icon_047.png", "c": "icon", "cn": "生活图标", "w": 44, "h": 50}, {"f": "icon/icon_048.png", "c": "icon", "cn": "生活图标", "w": 55, "h": 49}, {"f": "icon/icon_049.png", "c": "icon", "cn": "生活图标", "w": 63, "h": 52}, {"f": "icon/icon_050.png", "c": "icon", "cn": "生活图标", "w": 56, "h": 46}, {"f": "icon/icon_051.png", "c": "icon", "cn": "生活图标", "w": 54, "h": 43}, {"f": "icon/icon_052.png", "c": "icon", "cn": "生活图标", "w": 56, "h": 44}, {"f": "icon/icon_053.png", "c": "icon", "cn": "生活图标", "w": 55, "h": 59}, {"f": "icon/icon_054.png", "c": "icon", "cn": "生活图标", "w": 62, "h": 50}, {"f": "icon/icon_055.png", "c": "icon", "cn": "生活图标", "w": 48, "h": 44}, {"f": "icon/icon_056.png", "c": "icon", "cn": "生活图标", "w": 57, "h": 44}, {"f": "icon/icon_057.png", "c": "icon", "cn": "生活图标", "w": 46, "h": 43}, {"f": "icon/icon_058.png", "c": "icon", "cn": "生活图标", "w": 51, "h": 44}, {"f": "icon/icon_059.png", "c": "icon", "cn": "生活图标", "w": 57, "h": 43}, {"f": "icon/icon_060.png", "c": "icon", "cn": "生活图标", "w": 64, "h": 40}, {"f": "icon/icon_061.png", "c": "icon", "cn": "生活图标", "w": 48, "h": 39}, {"f": "icon/icon_062.png", "c": "icon", "cn": "生活图标", "w": 46, "h": 44}, {"f": "icon/icon_063.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 44}, {"f": "icon/icon_064.png", "c": "icon", "cn": "生活图标", "w": 50, "h": 40}, {"f": "icon/icon_065.png", "c": "icon", "cn": "生活图标", "w": 115, "h": 42}, {"f": "icon/icon_066.png", "c": "icon", "cn": "生活图标", "w": 53, "h": 39}, {"f": "icon/icon_067.png", "c": "icon", "cn": "生活图标", "w": 52, "h": 38}, {"f": "icon/icon_068.png", "c": "icon", "cn": "生活图标", "w": 47, "h": 36}, {"f": "icon/icon_069.png", "c": "icon", "cn": "生活图标", "w": 57, "h": 37}, {"f": "icon/icon_070.png", "c": "icon", "cn": "生活图标", "w": 46, "h": 43}, {"f": "icon/icon_071.png", "c": "icon", "cn": "生活图标", "w": 51, "h": 40}];</script>
 <script>
-Vue.createApp({
-  data() {
-    const icons = ['sun','moon','cloud','rain','snow','rainbow','lightning','umbrella','shooting-star','sparkles',
-      'flower','tulip','rose','sunflower','clover','leaf','sprout','tree','branch','berry',
-      'cat','dog','bear','rabbit','butterfly','paw','cherry','strawberry','apple','watermelon',
-      'cake','coffee','gift','balloon','smile','bow','crown','diamond',
-      'pencil','pen','brush','crayon','ruler','scissors','clip','pin','paper-plane','camera',
-      'clock','alarm','hourglass','calendar','laptop','phone','chat','pin-location','house','shop',
-      'cart','bag','key','lock','bulb','magnifier','flag','plane','train','bus','bike','music','note','book']
-    return { iconList: icons, iconCount: 0 }
-  },
-  mounted() {
-    try { this.iconCount = Object.keys(SadOne.NATURE_ICONS || {}).length + Object.keys(SadOne.LIFE_ICONS || {}).length } catch(e) {}
-  }
-}).use(SadOne.default || SadOne).mount('#app')
-</script>
-</body>
-</html>
+const order = [...new Set(DATA.map(d => d.c))];
+const CAT_CN = {}; DATA.forEach(d => CAT_CN[d.c] = d.cn);
+const nav = document.getElementById('nav'), main = document.getElementById('main');
+order.forEach(c => {
+  const items = DATA.filter(d => d.c === c);
+  const a = document.createElement('a'); a.href = '#' + c;
+  a.innerHTML = CAT_CN[c] + ' <span style="opacity:.55">' + items.length + '</span>';
+  nav.appendChild(a);
+  const sec = document.createElement('section'); sec.id = c;
+  sec.innerHTML = '<h2>' + CAT_CN[c] + '</h2><span class="cnt">× ' + items.length + '</span>';
+  const grid = document.createElement('div'); grid.className = 'grid';
+  items.forEach(d => {
+    const a = document.createElement('a'); a.className = 'card'; a.href = 'stickers/' + d.f; a.download = d.f.split('/').pop();
+    a.innerHTML = '<span class="ph"><img loading="lazy" src="stickers/' + d.f + '"></span><span class="nm">' + d.f.split('/').pop() + '<br>' + d.w + '×' + d.h + '</span>';
+    grid.appendChild(a);
+  });
+  sec.appendChild(grid); main.appendChild(sec);
+});
+</script></body></html>

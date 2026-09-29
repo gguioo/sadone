@@ -1,2 +1,7 @@
-node_modules/
-demo_preview_*.png
+stickers_raw/
+contact_sheet.png
+sorted_sheet.png
+rows.json
+site_preview.png
+works_live*.png
+demo_preview*.png
