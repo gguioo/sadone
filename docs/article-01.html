@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>打开手账 · 240 枚贴纸全展示 · SadOne Journal</title>
+<style>
+@font-face{font-family:Caveat;src:url(fonts/caveat-500.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Caveat;src:url(fonts/caveat-700.woff2) format('woff2');font-weight:700;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;padding:30px 16px 60px;background:#faf7f2;
+background-image:radial-gradient(#e5e0d5 1px,transparent 1px);background-size:22px 22px;
+font-family:Caveat,'Segoe Print','Bradley Hand','楷体','Kaiti SC',cursive;color:#3b3a37;text-align:center}
+nav{margin-bottom:6px}
+nav a{color:#8a8880;text-decoration:none;font-size:18px;margin:0 12px}
+nav a:hover{color:#3b3a37;text-decoration:underline wavy}
+.hero img.ribbon{width:330px;display:block;margin:0 auto}
+.hero h1{font-size:44px;margin:2px 0 0}
+.hero .sub{font-size:19px;color:#8a8880;margin:2px 0 0}
+.intro{max-width:640px;margin:18px auto 6px;font-size:19px;line-height:2}
+.intro .hl{color:#e88b7d}
+section{max-width:900px;margin:8px auto}
+.sec-head{margin:14px 0 4px}
+.sec-head img{width:210px;display:block;margin:0 auto}
+.sec-cnt{font-size:16px;color:#a5a199;display:block;margin-top:-6px}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:6px;max-width:900px;margin:10px auto 0}
+.cell{background:#fff;display:inline-block;padding:8px;border-radius:6px;transition:transform .2s}
+.cell img{display:block;max-width:150px;max-height:130px;width:auto;height:auto}
+.cell:nth-child(4n+1){transform:rotate(-4deg)}
+.cell:nth-child(4n+2){transform:rotate(2.5deg)}
+.cell:nth-child(4n+3){transform:rotate(-1.5deg)}
+.cell:nth-child(4n){transform:rotate(5deg)}
+.cell:hover{transform:rotate(0) scale(1.12);z-index:2;box-shadow:0 4px 14px rgba(60,58,55,.16)}
+.divider{width:280px;display:block;margin:26px auto}
+footer{margin-top:40px;font-size:16px;color:#a5a199}
+footer a{color:#8a8880;font-size:19px;border-bottom:1.5px dashed #b9b5aa;text-decoration:none}
+footer a:hover{color:#e88b7d}
+.wreath{width:150px;margin:0 auto}
+</style>
+</head>
+<body>
+<nav>
+  <a href="./">Journal</a>
+  <a href="article-01.html">文章</a>
+  <a href="library.html">贴纸库</a>
+  <a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener">GitHub</a>
+</nav>
+
+<div class="hero">
+  <img class="ribbon" src="stickers/ribbon/ribbon_004.png" alt="Today">
+  <h1>打开手账</h1>
+  <p class="sub">240 枚贴纸，全部摊开 · 2026.09.29</p>
+</div>
+
+<p class="intro">
+  这本手账里的每一枚贴纸，都是从两张手绘素材图里<span class="hl">原图抠切</span>出来的——<br>
+  连通域找元素、投影分割粘连、洪泛留住纸白、白底转成透明。<br>
+  没有一笔是重画的。往下翻，按分类慢慢看。
+</p>
+
+<img class="divider" src="stickers/divider/divider_004.png" alt="">
+
+<section id="ribbon">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_005.png" alt="NOTE"><span class="sec-cnt">丝带标题 · 30 枚</span></div>
+  <div class="grid" id="grid-ribbon"></div>
+</section>
+
+<img class="divider" src="stickers/divider/divider_005.png" alt="">
+
+<section id="note">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_006.png" alt="Memo"><span class="sec-cnt">便签卡 · 6 枚</span></div>
+  <div class="grid" id="grid-note"></div>
+</section>
+
+<section id="frame">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_010.png" alt="Plan"><span class="sec-cnt">边框底板 · 11 枚</span></div>
+  <div class="grid" id="grid-frame"></div>
+</section>
+
+<section id="bubble">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_008.png" alt="Idea"><span class="sec-cnt">对话气泡 · 6 枚</span></div>
+  <div class="grid" id="grid-bubble"></div>
+</section>
+
+<section id="tag">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_002.png" alt="Important"><span class="sec-cnt">标签贴纸 · 7 枚</span></div>
+  <div class="grid" id="grid-tag"></div>
+</section>
+
+<img class="divider" src="stickers/divider/divider_003.png" alt="">
+
+<section id="tape">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_013.png" alt="Today"><span class="sec-cnt">和纸胶带 · 7 枚</span></div>
+  <div class="grid" id="grid-tape"></div>
+</section>
+
+<section id="stamp">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_014.png" alt="This Week"><span class="sec-cnt">邮票邮戳 · 9 枚</span></div>
+  <div class="grid" id="grid-stamp"></div>
+</section>
+
+<section id="label">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_016.png" alt="Reminder"><span class="sec-cnt">吊牌书签 · 25 枚</span></div>
+  <div class="grid" id="grid-label"></div>
+</section>
+
+<section id="wreath">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_020.png" alt="Habit Tracker"><span class="sec-cnt">花环角饰 · 8 枚</span></div>
+  <div class="grid" id="grid-wreath"></div>
+</section>
+
+<img class="divider" src="stickers/divider/divider_001.png" alt="">
+
+<section id="divider">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_015.png" alt="Monthly"><span class="sec-cnt">分隔线 · 16 枚</span></div>
+  <div class="grid" id="grid-divider"></div>
+</section>
+
+<section id="planner">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_017.png" alt="Weekly"><span class="sec-cnt">日期计划 · 6 枚</span></div>
+  <div class="grid" id="grid-planner"></div>
+</section>
+
+<section id="symbol">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_018.png" alt="Done"><span class="sec-cnt">符号箭头 · 10 枚</span></div>
+  <div class="grid" id="grid-symbol"></div>
+</section>
+
+<img class="divider" src="stickers/divider/divider_002.png" alt="">
+
+<section id="doodle">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_011.png" alt="Title 宽"><span class="sec-cnt">涂鸦小图 · 28 枚</span></div>
+  <div class="grid" id="grid-doodle"></div>
+</section>
+
+<section id="icon">
+  <div class="sec-head"><img src="stickers/ribbon/ribbon_019.png" alt="Goals"><span class="sec-cnt">生活图标 · 71 枚</span></div>
+  <div class="grid" id="grid-icon"></div>
+</section>
+
+<img class="divider" src="stickers/divider/divider_005.png" alt="">
+
+<div class="wreath"><img src="stickers/wreath/wreath_001.png" style="width:100%" alt=""></div>
+<footer>
+  <a href="library.html">去贴纸库 · 按分类下载全部 240 枚 →</a><br><br>
+  SadOne Stickers · <a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener" style="font-size:16px;border:none">gguioo</a>
+</footer>
+
+<script src="manifest-data.js"></script>
+<script>
+const MF = window.SADONE_MF;
+const BY_CAT = {};
+MF.forEach(m => { (BY_CAT[m.cat] = BY_CAT[m.cat] || []).push(m); });
+document.querySelectorAll('.grid[id]').forEach(grid => {
+  const cat = grid.id.replace('grid-', '');
+  (BY_CAT[cat] || []).forEach(m => {
+    const s = document.createElement('span'); s.className = 'cell';
+    s.innerHTML = '<img loading="lazy" src="stickers/' + m.file + '" alt="' + m.file + '">';
+    grid.appendChild(s);
+  });
+});
+</script>
+</body>
+</html>
