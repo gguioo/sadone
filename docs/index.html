@@ -3,87 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SadOne Journal · 手账博客</title>
+<title>SadOne Journal</title>
 <style>
 @font-face{font-family:Caveat;src:url(fonts/caveat-500.woff2) format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:Caveat;src:url(fonts/caveat-700.woff2) format('woff2');font-weight:700;font-display:swap}
 *{box-sizing:border-box}
-body{margin:0;padding:30px 16px 60px;background:#faf7f2;
-background-image:radial-gradient(#e5e0d5 1px,transparent 1px);background-size:22px 22px;
+body{margin:0;padding:34px 16px 60px;background:#faf7f2;
+background-image:radial-gradient(#e7e2d6 1px,transparent 1px);background-size:24px 24px;
 font-family:Caveat,'Segoe Print','Bradley Hand','楷体','Kaiti SC',cursive;color:#3b3a37;text-align:center}
-nav{margin-bottom:8px}
-nav a{color:#8a8880;text-decoration:none;font-size:19px;margin:0 14px}
-nav a:hover{color:#3b3a37;text-decoration:underline wavy}
-.hero img.ribbon{width:340px;display:block;margin:0 auto}
-.hero h1{font-size:52px;margin:2px 0 0;letter-spacing:.04em}
-.hero .sub{font-size:20px;color:#8a8880;margin:4px 0 0}
-.hero .tape{position:absolute;width:90px;transform:rotate(-6deg);opacity:.95}
-.hero{position:relative;max-width:760px;margin:0 auto;padding-top:6px}
-.hero .tape.l{left:6%;top:30px}
-.hero .tape.r{right:6%;top:110px;transform:rotate(7deg)}
-section.recent{max-width:820px;margin:44px auto 10px}
-.sec-ribbon{width:250px;display:block;margin:0 auto 20px}
-.paper-link{display:inline-block;background:#fffdf8;border:1.8px dashed #3b3a37;border-radius:12px;padding:16px 26px 12px;margin:10px 12px;min-width:250px}
-.paper-link .paper-date{font-size:14px;color:#8a8880;letter-spacing:.1em;margin-bottom:4px}
-.paper-link a{font-size:22px;font-weight:700;color:#3b3a37;text-decoration:none}
-.paper-link a:hover{text-decoration:underline wavy}
-.note-body{position:absolute;left:10%;right:10%;top:31%;text-align:left;font-size:17px;line-height:1.9}
-.note-body a{color:#3b3a37;text-decoration:none;border-bottom:1.5px dashed #b9b5aa}
-.note-body a:hover{color:#e88b7d;border-color:#e88b7d}
-.note-date{font-size:13px;color:#a5a199}
-.scatter{max-width:860px;margin:34px auto 8px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:8px}
-.scatter img{width:110px}
-.scatter img:nth-child(3n){transform:rotate(6deg)}
-.scatter img:nth-child(3n+1){transform:rotate(-5deg)}
-.scatter img:nth-child(3n+2){transform:rotate(2deg)}
-.divider{width:270px;display:block;margin:30px auto}
-footer{margin-top:46px;font-size:16px;color:#a5a199}
-footer a{color:#8a8880}
+.wrap{max-width:600px;margin:0 auto}
+.top{font-size:15px;color:#a5a199;text-align:right;max-width:600px;margin:0 auto 30px}
+.top a{color:#a5a199;text-decoration:none;margin-left:16px}
+.top a:hover{color:#3b3a37}
+.hero img{width:190px;display:block;margin:0 auto 0}
+.hero h1{font-size:40px;margin:0 0 2px;letter-spacing:.03em}
+.hero p{font-size:17px;color:#8a8880;margin:2px 0 0}
+.doodle{width:30px;vertical-align:-6px;margin:0 3px}
+.hr{width:190px;margin:30px auto;display:block}
+h2.sec{font-size:26px;margin:36px 0 16px;color:#3b3a37}
+.posts{text-align:left;max-width:520px;margin:0 auto}
+.post{display:block;text-decoration:none;color:#3b3a37;padding:13px 6px;border-bottom:1.5px dashed #d8d3c8}
+.post:hover{background:#fdf9f0}
+.post .d{font-size:14px;color:#a5a199;letter-spacing:.12em}
+.post .t{font-size:21px;font-weight:700}
+.post .t .ic{width:22px;vertical-align:-4px;margin-left:6px}
+.post.todo .t{color:#a5a199;font-weight:400}
+.side{margin:34px auto 0;max-width:520px;display:flex;align-items:center;justify-content:center;gap:16px}
+.side img.r{width:150px}
+.side img.d{width:34px}
+.side p{text-align:left;font-size:17px;color:#8a8880;line-height:1.6;margin:0}
+footer{margin-top:44px;font-size:15px;color:#a5a199}
+footer img{width:150px;display:block;margin:0 auto 6px}
+footer a{color:#8a8880;text-decoration:none;border-bottom:1px dashed #c9c4b8}
 </style>
 </head>
 <body>
-<nav>
-  <a href="./">Journal</a>
-  <a href="article-01.html">文章</a>
-  <a href="library.html">贴纸库</a>
-  <a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener">GitHub</a>
-</nav>
+<div class="wrap">
+  <div class="top"><a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener">GitHub</a></div>
 
-<div class="hero">
-  <img class="tape l" src="stickers/tape/tape_002.png" alt="">
-  <img class="tape r" src="stickers/tape/tape_006.png" alt="">
-  <img class="ribbon" src="stickers/ribbon/ribbon_003.png" alt="Title">
-  <h1>SadOne Journal</h1>
-  <p class="sub">—— 一本用 240 枚手账贴纸写成的手账本</p>
-</div>
-
-<img class="divider" src="stickers/divider/divider_004.png" alt="">
-
-<section class="recent">
-  <img class="sec-ribbon" src="stickers/ribbon/ribbon_005.png" alt="NOTE">
-  <div class="paper-link">
-    <div class="paper-date">2026 · 09 · 29</div>
-    <a href="article-01.html">打开手账 · 234 枚贴纸全展示</a><br>
-    <span style="font-size:14px;color:#8a8880">丝带、胶带、邮票、涂鸦 —— 全部摊开给你看</span>
+  <div class="hero">
+    <img src="stickers/ribbon/ribbon_003.png" alt="Title">
+    <h1>SadOne Journal</h1>
+    <p>一本贴着手账贴纸的博客<img class="doodle" src="stickers/doodle/doodle_008.png" alt=""></p>
   </div>
-  <div class="paper-link">
-    <div class="paper-date">备忘</div>
-    <a href="library.html">贴纸库 · 分类浏览下载</a><br>
-    <span style="font-size:14px;color:#8a8880">13 类，透明底 PNG，点击即取</span>
+
+  <img class="hr" src="stickers/divider/divider_004.png" alt="">
+
+  <h2 class="sec">文章</h2>
+  <div class="posts">
+    <a class="post" href="article-01.html">
+      <div class="d">2026 · 09 · 29</div>
+      <div class="t">打开手账：240 枚贴纸，全部摊开<img class="ic" src="stickers/doodle/doodle_004.png" alt=""></div>
+    </a>
+    <a class="post" href="library.html" style="display:none"></a>
+    <div class="post todo">
+      <div class="d">某 一 天</div>
+      <div class="t">下一篇，想到再写</div>
+    </div>
+    <div class="post todo">
+      <div class="d">又 一 天</div>
+      <div class="t">大概是天气好的时候</div>
+    </div>
   </div>
-</section>
 
-<div class="scatter">
-  <img src="stickers/doodle/doodle_008.png" alt="">
-  <img src="stickers/ribbon/ribbon_009.png" alt="Good Day">
-  <img src="stickers/doodle/doodle_006.png" alt="">
-  <img src="stickers/stamp/stamp_001.png" alt="">
-  <img src="stickers/doodle/doodle_004.png" alt="">
+  <div class="side">
+    <img class="r" src="stickers/ribbon/ribbon_009.png" alt="Good Day">
+    <p>今天的风很温柔。<br>贴纸已经贴好了，<br>就等你来翻。</p>
+    <img class="d" src="stickers/doodle/doodle_006.png" alt="">
+  </div>
+
+  <footer>
+    <img src="stickers/divider/divider_004.png" alt="">
+    SadOne · <a href="https://gguioo.github.io/sadone/">gguioo.github.io/sadone</a> · 手账贴纸全部原图抠切
+  </footer>
 </div>
-
-<footer>
-  <img class="divider" src="stickers/divider/divider_002.png" alt="">
-  SadOne Stickers · <a href="https://github.com/gguioo/sadone" target="_blank" rel="noopener">gguioo</a> · 全部原图抠切 ✦
-</footer>
 </body>
 </html>
