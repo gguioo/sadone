@@ -128,54 +128,6 @@
   "h": 93
  },
  {
-  "file": "note/note_001.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_002.png",
-  "w": 156,
-  "h": 170
- },
- {
-  "file": "note/note_002.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_005.png",
-  "w": 155,
-  "h": 169
- },
- {
-  "file": "note/note_003.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_001.png",
-  "w": 171,
-  "h": 183
- },
- {
-  "file": "note/note_004.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_003.png",
-  "w": 154,
-  "h": 171
- },
- {
-  "file": "note/note_005.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_004.png",
-  "w": 161,
-  "h": 162
- },
- {
-  "file": "note/note_006.png",
-  "cat": "note",
-  "cat_cn": "便签卡",
-  "src": "img1_006.png",
-  "w": 152,
-  "h": 165
- },
- {
   "file": "bubble/bubble_001.png",
   "cat": "bubble",
   "cat_cn": "对话气泡",

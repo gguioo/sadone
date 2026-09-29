@@ -23,8 +23,10 @@ nav a:hover{color:#3b3a37;text-decoration:underline wavy}
 .hero .tape.r{right:6%;top:110px;transform:rotate(7deg)}
 section.recent{max-width:820px;margin:44px auto 10px}
 .sec-ribbon{width:250px;display:block;margin:0 auto 20px}
-.note-wrap{position:relative;display:inline-block;width:250px;margin:10px 12px}
-.note-wrap img.bgnote{width:100%;display:block}
+.paper-link{display:inline-block;background:#fffdf8;border:1.8px dashed #3b3a37;border-radius:12px;padding:16px 26px 12px;margin:10px 12px;min-width:250px}
+.paper-link .paper-date{font-size:14px;color:#8a8880;letter-spacing:.1em;margin-bottom:4px}
+.paper-link a{font-size:22px;font-weight:700;color:#3b3a37;text-decoration:none}
+.paper-link a:hover{text-decoration:underline wavy}
 .note-body{position:absolute;left:10%;right:10%;top:31%;text-align:left;font-size:17px;line-height:1.9}
 .note-body a{color:#3b3a37;text-decoration:none;border-bottom:1.5px dashed #b9b5aa}
 .note-body a:hover{color:#e88b7d;border-color:#e88b7d}
@@ -59,21 +61,15 @@ footer a{color:#8a8880}
 
 <section class="recent">
   <img class="sec-ribbon" src="stickers/ribbon/ribbon_005.png" alt="NOTE">
-  <div class="note-wrap">
-    <img class="bgnote" src="stickers/note/note_002.png" alt="Notes">
-    <div class="note-body">
-      <div class="note-date">2026 · 09 · 29</div>
-      <a href="article-01.html">打开手账 · 240 枚贴纸全展示</a><br>
-      <span style="font-size:14px;color:#8a8880">丝带、便签、胶带、邮票 —— 全部摊开给你看</span>
-    </div>
+  <div class="paper-link">
+    <div class="paper-date">2026 · 09 · 29</div>
+    <a href="article-01.html">打开手账 · 234 枚贴纸全展示</a><br>
+    <span style="font-size:14px;color:#8a8880">丝带、胶带、邮票、涂鸦 —— 全部摊开给你看</span>
   </div>
-  <div class="note-wrap">
-    <img class="bgnote" src="stickers/note/note_005.png" alt="Memo">
-    <div class="note-body">
-      <div class="note-date">备忘</div>
-      <a href="library.html">贴纸库 · 分类浏览下载</a><br>
-      <span style="font-size:14px;color:#8a8880">14 类，透明底 PNG，点击即取</span>
-    </div>
+  <div class="paper-link">
+    <div class="paper-date">备忘</div>
+    <a href="library.html">贴纸库 · 分类浏览下载</a><br>
+    <span style="font-size:14px;color:#8a8880">13 类，透明底 PNG，点击即取</span>
   </div>
 </section>
 
